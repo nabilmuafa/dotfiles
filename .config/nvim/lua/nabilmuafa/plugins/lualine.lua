@@ -5,10 +5,10 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'dracula',
+          theme = 'dracula-nvim',
           section_separators = '',
           disabled_filetypes = { 'packer' },
-          component_separators = { left = '|', right = '❬' },
+          component_separators = { left = '❭', right = '❬' },
           globalstatus = true,
         },
       }
