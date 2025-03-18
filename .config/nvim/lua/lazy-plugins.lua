@@ -22,11 +22,11 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file/path/name.lua
 
+  require 'nabilmuafa/plugins/autopairs',
   require 'nabilmuafa/plugins/gitsigns',
   require 'nabilmuafa/plugins/which-key',
   require 'nabilmuafa/plugins/telescope',
   require 'nabilmuafa/plugins/lspconfig',
-  require 'nabilmuafa/plugins/lualine',
   require 'nabilmuafa/plugins/conform',
   require 'nabilmuafa/plugins/cmp',
   require 'nabilmuafa/plugins/todo-comments',
@@ -38,6 +38,7 @@ require('lazy').setup({
   require 'nabilmuafa/plugins/markdown-preview',
   require 'nabilmuafa/plugins/nvim-cmp',
   require 'nabilmuafa/plugins/nvim-tree',
+  require 'nabilmuafa/plugins/lualine',
   require 'nabilmuafa/plugins/nvim-treesitter',
   require 'nabilmuafa/plugins/vim-tmux-navigator',
 }, {

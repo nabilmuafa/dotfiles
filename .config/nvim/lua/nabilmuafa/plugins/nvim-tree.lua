@@ -14,6 +14,12 @@ return {
         },
       }
       vim.keymap.set('n', '<leader>ls', ':NvimTreeToggle<CR>', { desc = 'Open neovim tree' })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'NvimTree',
+        callback = function()
+          vim.opt_local.winbar = nil
+        end,
+      })
     end,
   },
 }
