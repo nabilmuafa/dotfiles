@@ -17,6 +17,13 @@ return {
       { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
+      vim.diagnostic.config {
+        virtual_text = true,
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+      }
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -135,7 +142,7 @@ return {
               },
             },
           },
-          tsserver = {
+          ts_ls = {
             init_options = {
               preferences = {
                 disableSuggestions = false,
