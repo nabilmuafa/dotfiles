@@ -23,12 +23,13 @@ require('lazy').setup({
   -- include a plugin definition from file/path/name.lua
 
   require 'nabilmuafa/plugins/autopairs',
+  require 'nabilmuafa/plugins/autotag',
   require 'nabilmuafa/plugins/gitsigns',
   require 'nabilmuafa/plugins/which-key',
   require 'nabilmuafa/plugins/telescope',
   require 'nabilmuafa/plugins/lspconfig',
   require 'nabilmuafa/plugins/conform',
-  require 'nabilmuafa/plugins/copilot',
+  -- require 'nabilmuafa/plugins/copilot',
   require 'nabilmuafa/plugins/cmp',
   require 'nabilmuafa/plugins/todo-comments',
   require 'nabilmuafa/plugins/mini',
