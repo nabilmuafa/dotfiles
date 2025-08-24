@@ -178,6 +178,15 @@ return {
           end,
         },
       }
+      -- Can't add 'gdscript' to servers because it is not listed in Mason. So :MasonInstall gdscript won't work.
+      local gdscript_config = {
+        capabilities = capabilities,
+        settings = {},
+      }
+      if vim.fn.has 'win32' == 1 then
+        gdscript_config.cmd = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
+      end
+      require('lspconfig').gdscript.setup(gdscript_config)
     end,
   },
 } -- vim: ts=2 sts=2 sw=2 et
