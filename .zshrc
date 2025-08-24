@@ -95,6 +95,9 @@ complete -o nospace -C /usr/bin/terraform terraform
 # Alias for pwninit
 alias pwninit='pwninit --template-path ~/ctf/pwn-template.py --template-bin-name elf'
 
+# Alias for binary pwndbg
+alias pwntools-gdb='pwndbg'
+
 # Alias for coyping binary to windows
 alias cpb='cp -v --target-directory=/mnt/c/Users/nmuaf/OneDrive/Documents/binaries'
 
@@ -105,3 +108,14 @@ alias stowdot='stow --dotfiles --target ~ .'
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# bun completions
+[ -s "/home/nabilmuafa/.bun/_bun" ] && source "/home/nabilmuafa/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bum
+export BUM_INSTALL="$HOME/.bum"
+export PATH="$BUM_INSTALL/bin:$PATH"
