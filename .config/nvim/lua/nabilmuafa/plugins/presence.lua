@@ -6,7 +6,7 @@ return {
         auto_update = true,
         neovim_image_text = 'VSCode Sucks',
         main_image = 'file',
-        log_level = nil,
+        -- log_level = 'info',
         debounce_timeout = 10,
         enable_line_number = false,
         show_time = true,
