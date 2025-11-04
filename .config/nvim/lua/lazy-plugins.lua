@@ -29,7 +29,7 @@ require('lazy').setup({
   require 'nabilmuafa/plugins/telescope',
   require 'nabilmuafa/plugins/lspconfig',
   require 'nabilmuafa/plugins/conform',
-  -- require 'nabilmuafa/plugins/copilot',
+  require 'nabilmuafa/plugins/copilot',
   require 'nabilmuafa/plugins/cmp',
   require 'nabilmuafa/plugins/todo-comments',
   require 'nabilmuafa/plugins/mini',
