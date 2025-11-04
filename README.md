@@ -1,12 +1,17 @@
 # nabilmuafa's Dotfiles
 
-### Stuff I Used
+### Stuff I Use
 
-* Neovim: Certified hood classic ahh IDE
+* kitty: Terminal emulator
+* NeoVim: Certified hood classic ahh IDE
 * oh-my-zsh: Terminal beautifier (sorta kinda)
 * tmux: Terminal multiplexer
+* sesh: Tmux session manager
+* stow: Dotfiles manager
+* fzf: Fuzzy finder
+* zoxide: Edgy replacement for `cd`
 
-Additionally there's `.zshrc` too. All within WSL2.
+More edgy stuff on the way! :nerd emoji:
 
 ```
 git clone https://github.com/nabilmuafa/dotfiles.git
