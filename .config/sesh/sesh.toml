@@ -1,0 +1,22 @@
+[[session]]
+name = "tmux config"
+path = "~/dotfiles/"
+startup_command = "nvim .tmux.conf"
+preview_command = "bat --color=always ~/dotfiles/.tmux.conf"
+
+[[session]]
+name = "sesh config"
+path = "~/dotfiles/"
+startup_command = "nvim ./.config/sesh/sesh.toml"
+preview_command = "bat --color=always ~/dotfiles/.config/sesh/sesh.toml"
+
+[[session]]
+name = "DMS"
+path = "~/digiserve/dms"
+startup_command = "cd dms-fe && tmux rename-window dms-fe && tmux split-window -v -l 18 'bun run dev' & tmux select-pane -U && nvim ."
+windows = [ "dms-be" ]
+
+[[window]]
+name = "dms-be"
+startup_script = "cd document-management-system && tmux split-window -v -l 18 -t DMS:dms-be 'bun run start:dev' & tmux select-pane -U && nvim ."
+
