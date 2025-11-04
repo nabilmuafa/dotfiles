@@ -70,10 +70,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-# Foundry PATH variables
-export PATH="$PATH:/home/nabilmuafa/.foundry/bin"
-export PATH="$PATH:/home/nabilmuafa/.local/bin"
-
 # Loads pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -104,8 +100,22 @@ alias cpb='cp -v --target-directory=/mnt/c/Users/nmuaf/OneDrive/Documents/binari
 # Alias for stowing dotfiles
 alias stowdot='stow --dotfiles --target ~ .'
 
-# Starts tmux by default
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+# Alias for warp-cli
+alias warpc='warp-cli connect'
+alias warpd='warp-cli disconnect'
+
+# Alias for cd
+alias cd='z'
+
+# Alias for update discord
+alias update-discord='/home/nabilmuafa/scripts/update-discord.sh'
+
+# Starts tmux by default (except in Kitty)
+if command -v tmux &> /dev/null \
+  && [ -n "$PS1" ] \
+  && [[ ! "$TERM" =~ screen ]] \
+  && [[ ! "$TERM" =~ tmux ]] \
+  && [ -z "$TMUX" ]; then
   exec tmux
 fi
 
@@ -119,3 +129,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bum
 export BUM_INSTALL="$HOME/.bum"
 export PATH="$BUM_INSTALL/bin:$PATH"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# fzf setup script
+if [[ ! "$PATH" == */home/nabilmuafa/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/nabilmuafa/.fzf/bin"
+fi
+source <(fzf --zsh)
