@@ -4,8 +4,8 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      'mason-org/mason.nvim',
+      'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
@@ -174,19 +174,19 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config[server_name].setup(server)
           end,
         },
       }
       -- Can't add 'gdscript' to servers because it is not listed in Mason. So :MasonInstall gdscript won't work.
-      local gdscript_config = {
-        capabilities = capabilities,
-        settings = {},
-      }
-      if vim.fn.has 'win32' == 1 then
-        gdscript_config.cmd = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
-      end
-      require('lspconfig').gdscript.setup(gdscript_config)
+      -- local gdscript_config = {
+      --   capabilities = capabilities,
+      --   settings = {},
+      -- }
+      -- if vim.fn.has 'win32' == 1 then
+      --   gdscript_config.cmd = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
+      -- end
+      -- vim.lsp.config['gdscript'].setup(gdscript_config)
     end,
   },
 } -- vim: ts=2 sts=2 sw=2 et
