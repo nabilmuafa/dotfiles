@@ -65,6 +65,12 @@ source $ZSH/oh-my-zsh.sh
 # Neovim PATH variables
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
+# Ghidra PATH variables
+export PATH="$PATH:/opt/ghidra_11.4.3_PUBLIC"
+
+# adb PATH variables
+export PATH="$PATH:/opt/platform-tools"
+
 # Go PATH variables
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -83,6 +89,9 @@ export NVM_DIR="$HOME/.nvm"
 # Foundry PATH variables
 export PATH="$PATH:/home/nabilmuafa/.foundry/bin"
 export PATH="$PATH:/home/nabilmuafa/.local/bin"
+
+# John The Ripper alias
+alias john='/home/nabilmuafa/tools/john/run/john'
 
 # I think this is for terraform
 autoload -U +X bashcompinit && bashcompinit
@@ -138,3 +147,9 @@ if [[ ! "$PATH" == */home/nabilmuafa/.fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/home/nabilmuafa/.fzf/bin"
 fi
 source <(fzf --zsh)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
