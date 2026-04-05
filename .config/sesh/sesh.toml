@@ -11,12 +11,18 @@ startup_command = "nvim ./.config/sesh/sesh.toml"
 preview_command = "bat --color=always ~/dotfiles/.config/sesh/sesh.toml"
 
 [[session]]
-name = "DMS"
-path = "~/digiserve/dms"
-startup_command = "cd dms-fe && tmux rename-window dms-fe && tmux split-window -v -l 18 'bun run dev' & tmux select-pane -U && nvim ."
-windows = [ "dms-be" ]
+name = "nvim config"
+path = "~/dotfiles/.config/nvim/"
+startup_command = "nvim ."
+preview_command = "bat --color=always ~/dotfiles/.config/nvim/"
 
-[[window]]
-name = "dms-be"
-startup_script = "cd document-management-system && tmux split-window -v -l 18 -t DMS:dms-be 'bun run start:dev' & tmux select-pane -U && nvim ."
-
+# [[session]]
+# name = "Example"
+# path = "Directory"
+# startup_command = "cd directory && tmux rename-window window-1 && tmux split-window -v -l 18 'command' & tmux select-pane -U && nvim ."
+# windows = [ "window-2" ]
+#
+# [[window]]
+# name = "window-2"
+# startup_script = "cd directory-2 && tmux split-window -v -l 18 -t Example:window-2 'command' & tmux select-pane -U && nvim ."
+#
