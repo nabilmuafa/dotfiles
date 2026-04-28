@@ -139,6 +139,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export BUM_INSTALL="$HOME/.bum"
 export PATH="$BUM_INSTALL/bin:$PATH"
 
+# intellij (sorry i dont want to setup java in neovim)
+export PATH="$PATH:/opt/idea-IU-261.22158.277/bin"
+
 # zoxide
 eval "$(zoxide init zsh)"
 
